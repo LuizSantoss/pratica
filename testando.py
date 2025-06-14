@@ -234,3 +234,9 @@ def menu():
             break    
 
 menu()
+
+p_uuniversidade = pd.read_csv("placements.csv")
+
+def p_uni():
+    p_uuniversidade.plot()
+    plt.show()
