@@ -7,15 +7,19 @@ from ydata_profiling import ProfileReport
 dados_func = pd.read_csv('tempo_salarios.csv')
 
 
+def mensagem_saida():
+    print('\nOperação finalizada\n')
+    input('Pressione ENTER para voltar ao menu de seleção\n')
+    return menu()
+
 def media_salarios():
     while True:
         resposta = input('Deseja visualizar a média dos salários? (s/n), "n" retorna ao menu de seleção:\n').lower().strip()
         if resposta == 's':
             print('A média atual dos salários é: \n')
             print(f'{dados_func['Salário (R$)'].mean():.2f}')
-            print('\nOperação finalizada\n')
-            input('Pressione ENTER para voltar ao menu de seleção\n')
-            return menu()
+            
+            mensagem_saida()
         elif resposta == 'n':
             print('Retornando ao menu de seleção\n\n')
             return menu()
@@ -28,9 +32,8 @@ def mediana_salarios():
         if resposta_mediana == 's':
             print('\nA mediana dos salários é: ')
             print(dados_func['Salário (R$)'].median())
-            print('\nOperação finalizada\n')
-            input('Presione ENTER para voltar ao menu de seleção\n\n')
-            return menu()
+            
+            mensagem_saida()
         elif resposta_mediana == 'n':
             print('Retornando ao menu de seleção\n\n')
             return menu()
@@ -73,15 +76,13 @@ def filtro_salario():
 
 def variacao_salario():
     print(f'\nExibindo a variância dos salários: {dados_func['Salário (R$)'].var():.2f}')
-    print('\nOperação finalizada\n')  
-    input('Pressione ENTER para voltar para o menu de seleção\n\n')
-    return menu()
+    
+    mensagem_saida()
 
 def desvio_padrao():
     print(f'Exibindo o desvio padrão dos salários: {dados_func['Salário (R$)'].std():.2f}')
-    print('\nOperação finalizada\n') 
-    input('Pressione ENTER para voltar para o menu de seleção\n\n')
-    return menu()
+   
+    mensagem_saida()
 
 def graficos():
     while True:
@@ -183,8 +184,7 @@ def resumo_dados():
     print('\nExibindo o resumo dos dados')
     print(f'\nDados resumidos: \n{dados_func.describe()}')
     
-    input('\nPressione desse ENTER para voltar ao menu\n')    
-    return menu()
+    mensagem_saida()
 
 def menu():
     while True:        
@@ -234,9 +234,3 @@ def menu():
             break    
 
 menu()
-
-p_uuniversidade = pd.read_csv("placements.csv")
-
-def p_uni():
-    p_uuniversidade.plot()
-    plt.show()
