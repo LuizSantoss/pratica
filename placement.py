@@ -25,3 +25,13 @@ plt.ylabel('Percentual')
 plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()
+
+#gráfico de relação de MBA e salarios
+plt.figure(figsize=(7, 5))
+plt.scatter(dados_sem_salarios['mba_p'], dados_sem_salarios['salary'], alpha=0.6, color='purple')
+plt.title('Correlação entre Nota MBA e Salário')
+plt.xlabel('Nota no MBA')
+plt.ylabel('Salário (R$)')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
