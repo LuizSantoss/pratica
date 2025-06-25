@@ -17,7 +17,7 @@ def media_salarios():
         resposta = input('Deseja visualizar a média dos salários? (s/n), "n" retorna ao menu de seleção:\n').lower().strip()
         if resposta == 's':
             print('A média atual dos salários é: \n')
-            print(f'{dados_func['Salário (R$)'].mean():.2f}')
+            print(f'{dados_func["Salário (R$)"].mean():.2f}')
             
             mensagem_saida()
         elif resposta == 'n':
@@ -31,7 +31,7 @@ def mediana_salarios():
         resposta_mediana = input('Deseja visualizar a mediana dos salários? (s/n), "n" retorna ao menu de seleção:\n').lower().strip()
         if resposta_mediana == 's':
             print('\nA mediana dos salários é: ')
-            print(dados_func['Salário (R$)'].median())
+            print(dados_func["Salário (R$)"].median())
             
             mensagem_saida()
         elif resposta_mediana == 'n':
@@ -50,7 +50,7 @@ def filtro_salario():
                 print('Insira um valor válido')
 
             print('\nValores filtrados:\n')
-            print(f'{dados_func.loc[dados_func['Salário (R$)']>valor_flltro]}')
+            print(f'{dados_func.loc[dados_func["Salário (R$)"]>valor_flltro]}')
             print('\nBusca finalizada\n')
             
             input('Aperte ENTER para voltar\n')
@@ -63,7 +63,7 @@ def filtro_salario():
                 print('Insira um valor válido')
             
             print('\nValores filtrados\n')
-            print(f'{dados_func.loc[dados_func['Salário (R$)']<valor_flltro]}')
+            print(f'{dados_func.loc[dados_func["Salário (R$)"]<valor_flltro]}')
             print('\nBusca finalizada\n')
             
             input('Aperte ENTER para voltar\n')
@@ -75,12 +75,12 @@ def filtro_salario():
             print('\nSelecione o tipo de filtro!\n')
 
 def variacao_salario():
-    print(f'\nExibindo a variância dos salários: {dados_func['Salário (R$)'].var():.2f}')
+    print(f'\nExibindo a variância dos salários: {dados_func["Salário (R$)"].var():.2f}')
     
     mensagem_saida()
 
 def desvio_padrao():
-    print(f'Exibindo o desvio padrão dos salários: {dados_func['Salário (R$)'].std():.2f}')
+    print(f'Exibindo o desvio padrão dos salários: {dados_func["Salário (R$)"].std():.2f}')
    
     mensagem_saida()
 

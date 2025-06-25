@@ -8,6 +8,7 @@ dados = pd.read_csv("placement.csv")
 dados_sem_salarios = dados.dropna(subset="salary")
 
 #gráfico de distribuição de salários por especialização
+plt.figure(figsize=(7,5))
 dados_sem_salarios.groupby("specialisation")["salary"].mean().plot(kind="bar", color="teal")
 plt.title('Salário Médio por Especialização')
 plt.ylabel('Salário (R$)')
